@@ -1,22 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_numbers.c                                 :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jblack-b <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/19 17:42:25 by jblack-b          #+#    #+#             */
-/*   Updated: 2018/11/20 20:20:34 by jblack-b         ###   ########.fr       */
+/*   Created: 2018/11/20 14:38:10 by jblack-b          #+#    #+#             */
+/*   Updated: 2018/11/20 14:40:03 by jblack-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(char c);
-
-void	ft_print_alphabet(void)
+int		ft_strlen(char *str)
 {
-	char c;
+	int count;
 
-	c = '0';
-	while (c <= '9')
-		ft_putchar(c++);
+	count = 0;
+	while (str[count] != '\0')
+		count++;
+	return (count);
 }

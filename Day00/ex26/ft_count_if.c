@@ -1,22 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_numbers.c                                 :+:      :+:    :+:   */
+/*   ft_count_if.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jblack-b <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/19 17:42:25 by jblack-b          #+#    #+#             */
-/*   Updated: 2018/11/20 20:20:34 by jblack-b         ###   ########.fr       */
+/*   Created: 2018/11/20 18:28:35 by jblack-b          #+#    #+#             */
+/*   Updated: 2018/11/20 20:04:24 by jblack-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(char c);
-
-void	ft_print_alphabet(void)
+int		ft_count_if(char **tab, int (*f)(char*))
 {
-	char c;
+	int count;
+	int i;
 
-	c = '0';
-	while (c <= '9')
-		ft_putchar(c++);
+	i = 0;
+	count = 0;
+	while (tab[i])
+	{
+		if (f(tab[i]) == 1)
+			count++;
+		i++;
+	}
+	return (count);
 }

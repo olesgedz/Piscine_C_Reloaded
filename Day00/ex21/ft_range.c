@@ -1,22 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_numbers.c                                 :+:      :+:    :+:   */
+/*   ft_range.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jblack-b <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/19 17:42:25 by jblack-b          #+#    #+#             */
-/*   Updated: 2018/11/20 20:20:34 by jblack-b         ###   ########.fr       */
+/*   Created: 2018/11/20 16:58:00 by jblack-b          #+#    #+#             */
+/*   Updated: 2018/11/20 17:13:50 by jblack-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(char c);
+#include <stdlib.h>
 
-void	ft_print_alphabet(void)
+void	ft_fill_range(int min, int max, int *range)
 {
-	char c;
+	int i;
 
-	c = '0';
-	while (c <= '9')
-		ft_putchar(c++);
+	i = 0;
+	while (min < max)
+	{
+		range[i] = min;
+		min++;
+		i++;
+	}
+}
+
+int		*ft_range(int min, int max)
+{
+	int *range;
+
+	range = NULL;
+	if (!(range = (int*)(malloc(sizeof(max - min)))))
+		return (NULL);
+	if (min >= max)
+		return (NULL);
+	ft_fill_range(min, max, range);
+	return (range);
 }

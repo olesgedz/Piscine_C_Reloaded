@@ -1,24 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jblack-b <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/19 20:45:17 by jblack-b          #+#    #+#             */
-/*   Updated: 2018/11/20 20:34:08 by jblack-b         ###   ########.fr       */
+/*   Created: 2018/11/20 16:07:42 by jblack-b          #+#    #+#             */
+/*   Updated: 2018/11/20 20:35:57 by jblack-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdlib.h>
 
-void	ft_putchar(char c);
+int		ft_strlen(char *str)
+{
+	int count;
 
-void	ft_putstr(char *str)
+	count = 0;
+	while (str[count] != '\0')
+		count++;
+	return (count);
+}
+
+void	ft_strcp(char *src, char *dst)
 {
 	int i;
 
 	i = 0;
-	while (str[i] != '\0')
-		ft_putchar(str[i++]);
+	while (src[i] != '\0')
+	{
+		dst[i] = src[i];
+		i++;
+	}
+	dst[i] = '\0';
+}
+
+char	*ft_strdup(char *src)
+{
+	char *new;
+
+	if (!(new = (char*)malloc(sizeof(char) * ft_strlen(src))))
+		return (NULL);
+	ft_strcp(src, new);
+	return (new);
 }
