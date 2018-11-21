@@ -6,13 +6,13 @@
 /*   By: jblack-b <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/19 17:42:25 by jblack-b          #+#    #+#             */
-/*   Updated: 2018/11/20 20:20:34 by jblack-b         ###   ########.fr       */
+/*   Updated: 2018/11/20 21:52:43 by jblack-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	ft_putchar(char c);
 
-void	ft_print_alphabet(void)
+void	ft_print_numbers(void)
 {
 	char c;
 

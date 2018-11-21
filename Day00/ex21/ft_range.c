@@ -6,7 +6,7 @@
 /*   By: jblack-b <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/20 16:58:00 by jblack-b          #+#    #+#             */
-/*   Updated: 2018/11/20 17:13:50 by jblack-b         ###   ########.fr       */
+/*   Updated: 2018/11/21 16:56:35 by jblack-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,9 @@ int		*ft_range(int min, int max)
 	int *range;
 
 	range = NULL;
-	if (!(range = (int*)(malloc(sizeof(max - min)))))
-		return (NULL);
 	if (min >= max)
+		return (NULL);
+	if (!(range = (int*)(malloc(sizeof(int) * (max - min)))))
 		return (NULL);
 	ft_fill_range(min, max, range);
 	return (range);

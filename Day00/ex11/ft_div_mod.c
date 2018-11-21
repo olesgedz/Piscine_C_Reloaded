@@ -6,12 +6,15 @@
 /*   By: jblack-b <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/19 18:50:18 by jblack-b          #+#    #+#             */
-/*   Updated: 2018/11/19 18:52:11 by jblack-b         ###   ########.fr       */
+/*   Updated: 2018/11/20 21:57:20 by jblack-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	ft_div_mod(int a, int b, int *div, int *mod)
 {
-	*div = a / b;
-	*mod = a / b;
+	if (b != 0)
+	{
+		*div = a / b;
+		*mod = a % b;
+	}
 }

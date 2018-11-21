@@ -6,7 +6,7 @@
 #    By: jblack-b <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/20 18:00:13 by jblack-b          #+#    #+#              #
-#    Updated: 2018/11/20 18:09:03 by jblack-b         ###   ########.fr        #
+#    Updated: 2018/11/20 22:17:09 by jblack-b         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,6 +24,6 @@ all:
 				ranlib $(NAME)
 clean:
 	/bin/rm -f $(OUT)
-fcleam:		clean
+fclean:		clean
 	/bin/rm -f $(NAME)
 re: fclean all
