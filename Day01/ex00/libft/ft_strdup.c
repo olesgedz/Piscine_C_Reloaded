@@ -1,34 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jblack-b <jblack-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/22 20:16:43 by jblack-b          #+#    #+#             */
-/*   Updated: 2018/11/23 16:49:27 by jblack-b         ###   ########.fr       */
+/*   Created: 2018/11/20 16:07:42 by jblack-b          #+#    #+#             */
+/*   Updated: 2018/11/23 18:03:16 by jblack-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include <stdlib.h>
+#include "libft.h"
 
-void		*ft_memmove(void *dst, const void *src, size_t len)
+char	*ft_strdup(char *src)
 {
-	size_t i;
+	char *new;
 
-	i = 0;
-	if (src < dst)
-	{
-		while (len-- > 0)
-			((char*)dst)[len] = ((char*)src)[len];
-	}
-	else
-	{
-		while (i < len)
-		{
-			((char*)dst)[i] = ((char*)src)[i];
-			i++;
-		}
-	}
-	return (dst);
+	if (!(new = (char*)malloc(sizeof(char) * ft_strlen(src) + 1)))
+		return (NULL);
+	ft_strcpy(new, src);
+	return (new);
 }
