@@ -6,7 +6,7 @@
 /*   By: jblack-b <jblack-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/22 18:30:02 by jblack-b          #+#    #+#             */
-/*   Updated: 2018/11/22 20:13:17 by jblack-b         ###   ########.fr       */
+/*   Updated: 2018/11/26 17:32:42 by jblack-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,10 @@
 #include <string.h>
 #include "./libft/ft_memcpy.c"
 #include "./libft/ft_memccpy.c"
-
+#include "./libft/ft_memcmp.c"
+#include "./libft/libft.h"
+#include "./libft/ft_strlcat.c"
+#include "./libft/ft_strlen.c"
 
 void		ft_memcpy_check(int n)
 {
@@ -34,12 +37,34 @@ void		ft_memccpy_check()
 	printf("%c\n", *(char*)ft_memccpy(buff1, src, 'm', 22));
 	printf("%c\n", *(char*)memccpy(buff2, src, 'm', 22));
 	printf("f:%s\nr:%s\n", buff1, buff2);
+}
+void		ft_memcmp_check()
+{
+	char *s1 = "\xff\xaa\xde\x12";
+	char *s2 = "\xff\xaa\xde\x12MACOSAAAAA";
+	size_t size = 4;
+	int i1 = memcmp(s1, s2, size);
+	int i2 = ft_memcmp(s1, s2, size);
+	printf("r:%d\nf:%d", i1, i2);
+}
 
+void		ft_strlcat_check()
+{
+	char *str = "the cake is a lie !\0I'm hidden lol\r\n";
+	char buff1[0xF00] = "there is no stars in the sky";
+	char buff2[0xF00] = "there is no stars in the sky";
+	size_t max = strlen("the cake is a lie !\0I'm hidden lol\r\n") + 4;
+	size_t r1 = strlcat(buff1, str, max);
+	size_t r2 = ft_strlcat(buff2, str, max);
+
+	printf("r:%s %zu\nf:%s %zu\n ", buff1, r1, buff2, r2);
 }
 
 int		main()
 {
 	//ft_memcpy_check(17);
-	ft_memccpy_check();
+	//ft_memccpy_check();
+	//ft_memcmp_check();
+	//ft_strlcat_check();
 	return (0);
 }
