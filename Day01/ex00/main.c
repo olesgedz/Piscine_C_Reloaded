@@ -6,18 +6,20 @@
 /*   By: jblack-b <jblack-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/22 18:30:02 by jblack-b          #+#    #+#             */
-/*   Updated: 2018/11/26 17:32:42 by jblack-b         ###   ########.fr       */
+/*   Updated: 2018/11/27 16:14:12 by jblack-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 #include "./libft/ft_memcpy.c"
 #include "./libft/ft_memccpy.c"
 #include "./libft/ft_memcmp.c"
 #include "./libft/libft.h"
 #include "./libft/ft_strlcat.c"
 #include "./libft/ft_strlen.c"
+#include "./libft/ft_atoi.c"
 
 void		ft_memcpy_check(int n)
 {
@@ -66,5 +68,6 @@ int		main()
 	//ft_memccpy_check();
 	//ft_memcmp_check();
 	//ft_strlcat_check();
+	printf("\n%d\n%d\n", ft_atoi("100000000000000000000000001"), atoi("-100000000000000000000000001"));
 	return (0);
 }
