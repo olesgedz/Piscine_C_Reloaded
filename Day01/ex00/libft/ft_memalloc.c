@@ -1,25 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_memalloc.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jblack-b <jblack-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/23 17:41:19 by jblack-b          #+#    #+#             */
-/*   Updated: 2018/11/28 16:47:51 by jblack-b         ###   ########.fr       */
+/*   Created: 2018/11/28 16:23:23 by jblack-b          #+#    #+#             */
+/*   Updated: 2018/11/28 16:58:52 by jblack-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBDFT_H
-# define LIBDFT_H
-# include <string.h>
+#include <stdlib.h>
+#include "libft.h"
+#include <stdio.h>
 
-void			*ft_memset(void *b, int c, size_t len);
-void		ft_bzero(void *s, size_t n);
-int		ft_strlen(char *str);
-char	*ft_strcpy(char *dst, const char *src);
-size_t	ft_strlcat(char *dst, const char *src, size_t size);
-int		ft_strcmp(char *s1, char *s2);
-int		ft_atoi(const char *str);
+void		*ft_memalloc(size_t size)
+{
+	void *new;
+	size_t i;
 
-#endif
+	i = 0;
+	new = NULL;
+	if ((new = (void *)malloc(size)))
+		return (NULL);
+
+
+	/*while (i < size)
+		((unsigned char*)new)[i++] = 0;*/
+	ft_bzero(new, size);
+	//printf("%d", *(int*)new);
+	/*while (i < size)
+	{
+		((unsigned char)new)[i] = 0;
+		i++;
+	}*/
+	return (new);
+}
