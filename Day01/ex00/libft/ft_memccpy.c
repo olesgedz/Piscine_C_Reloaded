@@ -6,7 +6,7 @@
 /*   By: jblack-b <jblack-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/22 19:40:06 by jblack-b          #+#    #+#             */
-/*   Updated: 2018/11/22 20:14:26 by jblack-b         ###   ########.fr       */
+/*   Updated: 2018/11/29 18:26:39 by jblack-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,6 @@ void		*ft_memccpy(void *dst, const void *src, int c, size_t n)
 		i++;
 	}
 	if (flag == 1)
-		return ((unsigned char*)(dst + i + 1));
+		return (((unsigned char*)dst) + i + 1);
 	return (NULL);
 }
