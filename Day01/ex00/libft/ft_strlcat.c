@@ -6,13 +6,12 @@
 /*   By: jblack-b <jblack-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/23 18:53:30 by jblack-b          #+#    #+#             */
-/*   Updated: 2018/11/26 18:18:30 by jblack-b         ###   ########.fr       */
+/*   Updated: 2018/11/29 16:48:57 by jblack-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 #include "libft.h"
-#include <stdio.h>
 
 size_t		ft_strlcat(char *dst, const char *src, size_t size)
 {

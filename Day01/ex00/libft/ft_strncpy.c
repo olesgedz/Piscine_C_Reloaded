@@ -6,13 +6,13 @@
 /*   By: jblack-b <jblack-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/23 18:06:48 by jblack-b          #+#    #+#             */
-/*   Updated: 2018/11/23 18:22:17 by jblack-b         ###   ########.fr       */
+/*   Updated: 2018/11/29 16:43:37 by jblack-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "string.h"
+#include <string.h>
 
-char *ft_strncpy(char * dst, const char * src, size_t len)
+char		*ft_strncpy(char *dst, const char *src, size_t len)
 {
 	size_t i;
 

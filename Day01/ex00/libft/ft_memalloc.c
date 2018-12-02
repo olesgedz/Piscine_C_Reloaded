@@ -6,13 +6,12 @@
 /*   By: jblack-b <jblack-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/28 16:23:23 by jblack-b          #+#    #+#             */
-/*   Updated: 2018/11/28 17:02:49 by jblack-b         ###   ########.fr       */
+/*   Updated: 2018/11/29 16:47:41 by jblack-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "libft.h"
-#include <stdio.h>
 
 void		*ft_memalloc(size_t size)
 {
