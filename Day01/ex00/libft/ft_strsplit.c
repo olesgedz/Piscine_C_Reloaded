@@ -12,7 +12,6 @@
 
 #include "libft.h"
 #include <stdlib.h>
-#include <stdio.h>
 
 int		ft_strsplit_nwords(char const *s, char c)
 {
@@ -23,13 +22,14 @@ int		ft_strsplit_nwords(char const *s, char c)
 	i = 0;
 	while (s[i] != '\0')
 	{
-		if (s[i] == c && s[i + 1] != c && s[i + 1] != '\0')
-		{
-			count++;
-			i++;
-		}
-		else
-			i++;
+			if (s[i] != c)
+			{
+				count++;
+				while(s[i] != c)
+					i++;
+			}
+			else
+				i++;
 	}
 	return (count);
 }
@@ -53,29 +53,29 @@ char		**ft_strsplit_fill(char const *s, char c, char **matrix)
 	k = 0;
 	i = 0;
 	j = 0;
-
-	while (k < ft_strsplit_nwords(s, c))
+	while (j < ft_strsplit_nwords(s, c))
 	{
 		while (s[i] == c && s[i] != '\0')
 			i++;
 		if (!(matrix[j] = (char*)(malloc(sizeof(char)\
-			* ft_strsplit_getlen(s + i, c) + 1))))
+			* ft_strsplit_getlen(s + i, c)))))
 			return (NULL);
+		while (s[i] != '\0')
+			{
+					if (s[i] != c)
+					{
+						matrix[j][k] = s[i];
 
-			while (s[i] != c )
-				{
-					matrix[j][k] = 'a';
-					printf("M%c, S%c", matrix[j][k], s[i]);
+						k++;
+					}
+					else
+						break ;
 					i++;
-					j++;
-				}
-	/*	while (s[i] != c && s[i] != '\0')
-		{
-			matrix[j][k] = s[i];
-			printf("%c", matrix[j][k]);
-			i++;
-		}*/
-		k++;
+
+			}
+		matrix[j][k + 1] = '\0';
+		k = 0;
+		j++;
 	}
 	return (matrix);
 }
@@ -85,17 +85,12 @@ char		**ft_strsplit(char const *s, char c)
 	char **matrix;
 
 	matrix = NULL;
+	if (s == NULL)
+		return (NULL);
 	if (!(matrix = (char**)(malloc(sizeof(char*)\
-	 * ft_strsplit_nwords(s, c) + 1))))
+	 * (ft_strsplit_nwords(s, c))))))
 		return (NULL);
 	matrix[ft_strsplit_nwords(s, c)] = NULL;
 	matrix = ft_strsplit_fill(s, c, matrix);
-
-	int k = 0;
-	while (matrix[k] != 0)
-	{
-		printf(" 1 %s\n", matrix[k]);
-		k++;
-	}
 	return (matrix);
 }
