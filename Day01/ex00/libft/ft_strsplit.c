@@ -6,7 +6,7 @@
 /*   By: jblack-b <jblack-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/30 19:25:35 by jblack-b          #+#    #+#             */
-/*   Updated: 2018/11/30 22:10:21 by jblack-b         ###   ########.fr       */
+/*   Updated: 2018/12/03 14:55:22 by olesgedz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ char		**ft_strsplit_fill(char const *s, char c, char **matrix)
 					i++;
 
 			}
-		matrix[j][k + 1] = '\0';
+		matrix[j][k] = '\0';
 		k = 0;
 		j++;
 	}

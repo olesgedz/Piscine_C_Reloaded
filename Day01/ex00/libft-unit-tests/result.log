@@ -42,7 +42,7 @@ ft_strjoin:    [OK] [OK] [OK] [OK] [OK] {protected}
 ft_strtrim:    [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] {protected}
 ft_strsplit:   [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] {protected}
 ft_itoa:       [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
-ft_putchar:    [MISSING]
+ft_putchar:    [OK] [OK] [OK] 
 ft_putstr:     [MISSING]
 ft_putendl:    [MISSING]
 ft_putnbr:     [MISSING]
