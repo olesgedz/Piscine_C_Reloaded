@@ -6,7 +6,7 @@
 /*   By: olesgedz <olesgedz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/03 14:37:38 by olesgedz          #+#    #+#             */
-/*   Updated: 2018/12/04 01:37:34 by olesgedz         ###   ########.fr       */
+/*   Updated: 2018/12/04 01:40:45 by olesgedz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,16 +41,18 @@ static size_t ft_toutf8(char *dest, unsigned int ch)
     return 0;
 }
 
-void		ft_putchar(int c)
+void		ft_putchar(char c)
 {
 	char strm[5];
 	int length;
+	unsigned char g;
 
-	if (c < 0x80)
-		write(1, &c ,1);
+	g = (unsigned char)c;
+	if (g < 0x80)
+		write(1, &g ,1);
 	else
 	{
-		length = ft_toutf8(strm, (c));
+		length = ft_toutf8(strm, (g));
 		write(1, strm, length);
 	}
 }

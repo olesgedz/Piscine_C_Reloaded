@@ -6,7 +6,7 @@
 /*   By: jblack-b <jblack-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/23 17:41:19 by jblack-b          #+#    #+#             */
-/*   Updated: 2018/12/04 01:18:42 by olesgedz         ###   ########.fr       */
+/*   Updated: 2018/12/04 01:39:56 by olesgedz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,6 @@ int				ft_strncmp(const char *s1, const char *s2, size_t n);
 char		*ft_strtrim(char const *s);
 char		**ft_strsplit(char const *s, char c);
 char	*ft_strdup(char *src);
-void		ft_putchar(int c);
+void	ft_putchar(char c);
 
 #endif
