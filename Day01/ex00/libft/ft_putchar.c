@@ -6,7 +6,7 @@
 /*   By: olesgedz <olesgedz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/03 14:37:38 by olesgedz          #+#    #+#             */
-/*   Updated: 2018/12/04 01:44:20 by olesgedz         ###   ########.fr       */
+/*   Updated: 2018/12/04 01:46:48 by olesgedz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,8 @@ void		ft_putchar(char c)
 	else
 	{
 		length = ft_toutf8(strm, (unsigned char)c);
+		if (length == 0)
+			return ;
 		write(1, strm, length);
 	}
 }
