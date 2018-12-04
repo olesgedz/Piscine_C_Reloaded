@@ -6,7 +6,7 @@
 /*   By: jblack-b <jblack-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/22 18:30:02 by jblack-b          #+#    #+#             */
-/*   Updated: 2018/12/03 14:48:46 by olesgedz         ###   ########.fr       */
+/*   Updated: 2018/12/04 19:23:19 by jblack-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,8 +66,10 @@ int		main()
 	//ft_strlcat_check();
 //	printf("\n%d\n%d\n", ft_atoi("9223372036854775805"), atoi("9223372036854775805"));
 //	printf("%s\n", ft_strtrim("   A   "));
-//ft_strsplit("*hello*fellow***sdsa*", '*');
-int c = L'ø';
-ft_putchar(c);
+	char** matrix = ft_strsplit("      split       this for   me  !       ", ' ');
+//int c = L'ø';
+//ft_putchar(c);
+while(*matrix != 0)
+	printf("%s\n", *matrix++);
 	return (0);
 }

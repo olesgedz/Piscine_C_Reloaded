@@ -6,14 +6,27 @@
 /*   By: jblack-b <jblack-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/30 19:25:35 by jblack-b          #+#    #+#             */
-/*   Updated: 2018/12/03 14:55:22 by olesgedz         ###   ########.fr       */
+/*   Updated: 2018/12/04 19:32:29 by jblack-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-int		ft_strsplit_nwords(char const *s, char c)
+int		ft_ln_w(char *str, int i, char c)
+{
+	int count;
+
+	count = 0;
+	while (str[i] != c && str[i])
+	{
+		count++;
+		i++;
+	}
+	return (count);
+}
+
+int		ft_n_words(char *s, char c)
 {
 	int i;
 	int count;
@@ -22,75 +35,53 @@ int		ft_strsplit_nwords(char const *s, char c)
 	i = 0;
 	while (s[i] != '\0')
 	{
-			if (s[i] != c)
-			{
-				count++;
-				while(s[i] != c)
-					i++;
-			}
-			else
+		if (s[i] != c)
+		{
+			count++;
+			while (s[i] != c)
 				i++;
+		}
+		else
+			i++;
 	}
 	return (count);
 }
 
-int		ft_strsplit_getlen(char const *s, char c)
+int		ft_strsplit_cleanup(char **dst)
 {
-	int count;
-
-	count = 0;
-	while (s[count] != c && s[count] != '\0')
-		count++;
-	return (count);
+	while (*dst)
+	{
+		free(dst);
+		dst++;
+	}
+	return (1);
 }
 
-char		**ft_strsplit_fill(char const *s, char c, char **matrix)
+char	**ft_strsplit(char const *s, char c)
 {
-	int j;
-	int i;
-	int k;
+	char	**dst;
+	int		k;
+	int		j;
+	int		i;
 
-	k = 0;
 	i = 0;
 	j = 0;
-	while (j < ft_strsplit_nwords(s, c))
+	if (!s || !(dst = malloc(sizeof(char*) * (ft_n_words((char *)s, c)))))
+		return (NULL);
+	while (s[i])
 	{
-		while (s[i] == c && s[i] != '\0')
+		while (s[i] == c && s[i])
 			i++;
-		if (!(matrix[j] = (char*)(malloc(sizeof(char)\
-			* ft_strsplit_getlen(s + i, c)))))
-			return (NULL);
-		while (s[i] != '\0')
-			{
-					if (s[i] != c)
-					{
-						matrix[j][k] = s[i];
-
-						k++;
-					}
-					else
-						break ;
-					i++;
-
-			}
-		matrix[j][k] = '\0';
-		k = 0;
-		j++;
+		if (s[i])
+		{
+			k = 0;
+			if (!(dst[j] = malloc(sizeof(char) \
+			* ft_ln_w((char *)s, i, c) + 1)) && ft_strsplit_cleanup(dst))
+				return (NULL);
+			while (s[i] != c && s[i])
+				dst[j][k++] = s[i++];
+			dst[j++][k] = '\0';
+		}
 	}
-	return (matrix);
-}
-
-char		**ft_strsplit(char const *s, char c)
-{
-	char **matrix;
-
-	matrix = NULL;
-	if (s == NULL)
-		return (NULL);
-	if (!(matrix = (char**)(malloc(sizeof(char*)\
-	 * (ft_strsplit_nwords(s, c))))))
-		return (NULL);
-	matrix[ft_strsplit_nwords(s, c)] = NULL;
-	matrix = ft_strsplit_fill(s, c, matrix);
-	return (matrix);
+	return (dst);
 }

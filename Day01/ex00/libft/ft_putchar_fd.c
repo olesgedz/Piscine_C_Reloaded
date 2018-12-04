@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: olesgedz <olesgedz@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jblack-b <jblack-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/03 14:37:38 by olesgedz          #+#    #+#             */
-/*   Updated: 2018/12/04 17:40:16 by jblack-b         ###   ########.fr       */
+/*   Created: 2018/12/04 17:40:33 by jblack-b          #+#    #+#             */
+/*   Updated: 2018/12/04 18:08:15 by jblack-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include "libft.h"
 
-static size_t		ft_toutf8(char *dest, unsigned int ch)
+static	size_t		ft_toutf8(char *dest, unsigned int ch)
 {
 	if (ch < 0x800)
 	{
@@ -39,18 +39,18 @@ static size_t		ft_toutf8(char *dest, unsigned int ch)
 	return (0);
 }
 
-void		ft_putchar(char c)
+void		ft_putchar_fd(char c, int fd)
 {
 	char strm[4];
 	int length;
 
 	if ((unsigned char)c < 0x80)
-		write(1, &c, 1);
+		write(fd, &c, 1);
 	else
 	{
 		length = ft_toutf8(strm, (unsigned char)c);
 		if (length == 0)
 			return ;
-		write(1, strm, length);
+		write(fd, strm, length);
 	}
 }

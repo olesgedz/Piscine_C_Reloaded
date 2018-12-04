@@ -43,10 +43,10 @@ ft_strtrim:    [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] {protected}
 ft_strsplit:   [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] {protected}
 ft_itoa:       [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
 ft_putchar:    [OK] [OK] [OK] 
-ft_putstr:     [MISSING]
-ft_putendl:    [MISSING]
-ft_putnbr:     [MISSING]
-ft_putchar_fd: [MISSING]
-ft_putstr_fd:  [MISSING]
-ft_putendl_fd: [MISSING]
-ft_putnbr_fd:  [MISSING]
+ft_putstr:     [OK] [OK] {protected}
+ft_putendl:    [OK] [OK] {protected}
+ft_putnbr:     [OK] [OK] [OK] [OK] [OK] 
+ft_putchar_fd: [OK] [OK] [OK] 
+ft_putstr_fd:  [OK] [OK] {protected}
+ft_putendl_fd: [OK] [OK] {protected}
+ft_putnbr_fd:  [OK] [OK] [OK] [OK] [OK] 
