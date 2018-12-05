@@ -50,3 +50,116 @@ ft_putchar_fd: [OK] [OK] [OK]
 ft_putstr_fd:  [OK] [OK] {protected}
 ft_putendl_fd: [OK] [OK] {protected}
 ft_putnbr_fd:  [OK] [OK] [OK] [OK] [OK] 
+ft_lstnew:     [OK] [CRASH] [OK] [OK] 
+[crash]: your lstnew does not allocate memory
+Test code:
+	char *data = "hello, i'm a data";
+	t_list *l = ft_lstnew(data, strlen(data) + 1);
+
+	if (!strcmp(data, l->content))
+	{
+		free(l->content);
+		free(l);
+		exit(TEST_SUCCESS);
+	}
+	exit(TEST_FAILED);
+
+
+ft_lstdelone:  [CRASH] 
+[crash]: your lstdelone does not work
+Test code:
+	t_list *l = lstnew(malloc(10), 10);
+
+	ft_lstdelone(&l, lstdelone_f);
+	write(2, "", 1);
+	if (!l)
+		exit(TEST_SUCCESS);
+	exit(TEST_FAILED);
+
+
+ft_lstdel:     [CRASH] [OK] [CRASH] 
+[crash]: your lstdel does not work with basic input
+Test code:
+	t_list *l = lstnew(strdup("nyancat"), 8);
+
+	l->next = lstnew(strdup("#TEST#"), 7);
+	ft_lstdel(&l, lstdelone_f);
+	write(2, "", 1);
+	if (!l)
+		exit(TEST_SUCCESS);
+	exit(TEST_FAILED);
+
+
+[crash]: bad call number of the function pointer
+Test code:
+	char *content = "hello !";
+
+	__delNum = 0;
+	list = malloc(sizeof(t_list));
+	bzero(list, sizeof(t_list));
+	list->next = malloc(sizeof(t_list));
+	bzero(list->next, sizeof(t_list));
+	list->content = content;
+	list->next->content = content + 2;
+	ft_lstdel(&list, lstdel_f);
+	if (__delNum == 2)
+		exit(TEST_SUCCESS);
+	exit(TEST_FAILED);
+
+
+ft_lstadd:     [FAILED] [FAILED] [CRASH] 
+[fail]: your lstadd does not work with basic input
+Test code:
+	t_list *l = lstnew(strdup("nyacat"), 8);
+	t_list *n = lstnew(strdup("OK"), 3);
+
+	ft_lstadd(&l, n);
+	if (l == n && !strcmp(l->content, "OK") && l->content_size == 3)
+	{
+		exit(TEST_SUCCESS);
+	}
+	exit(TEST_FAILED);
+
+Diffs:
+      lstadd: |0x7ff476402580|
+   ft_lstadd: |0x7ff476402550|
+
+[fail]: your lstadd does not work with basic input
+Test code:
+	t_list *l = lstnew(strdup("nyacat"), 8);
+	t_list *n = lstnew(strdup("OK"), 3);
+
+	ft_lstadd(&l, n);
+	if (l == n && !strcmp(l->content, "OK") && l->content_size == 3)
+	{
+		free(l->next);
+		free(l);
+		exit(TEST_SUCCESS);
+	}
+	free(l->next);
+	free(l);
+	exit(TEST_FAILED);
+
+Diffs:
+      lstadd: |0x7ff4766000d0|
+   ft_lstadd: |0x7ff4766000a0|
+
+[crash]: your lstadd does not work with null node input
+Test code:
+	t_list *l = ((void *)0);
+	t_list *n = lstnew(strdup("OK"), 3);
+
+	ft_lstadd(&l, n);
+	if (l == n && !strcmp(l->content, "OK") && l->content_size == 3)
+	{
+		free(l->next);
+		free(l);
+		exit(TEST_SUCCESS);
+	}
+	free(l->next);
+	free(l);
+	exit(TEST_FAILED);
+
+
+ft_lstiter:    [OK] {protected}
+ft_lstmap:     [OK] {not protected}

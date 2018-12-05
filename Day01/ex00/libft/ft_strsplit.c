@@ -6,7 +6,7 @@
 /*   By: jblack-b <jblack-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/30 19:25:35 by jblack-b          #+#    #+#             */
-/*   Updated: 2018/12/04 19:32:29 by jblack-b         ###   ########.fr       */
+/*   Updated: 2018/12/04 20:50:40 by jblack-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,9 +51,10 @@ int		ft_strsplit_cleanup(char **dst)
 {
 	while (*dst)
 	{
-		free(dst);
+		free(*dst);
 		dst++;
 	}
+	free(dst);
 	return (1);
 }
 
