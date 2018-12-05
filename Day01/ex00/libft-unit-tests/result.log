@@ -121,8 +121,8 @@ Test code:
 	exit(TEST_FAILED);
 
 Diffs:
-      lstadd: |0x7ff476402580|
-   ft_lstadd: |0x7ff476402550|
+      lstadd: |0x7fe0037000d0|
+   ft_lstadd: |0x7fe0037000a0|
 
 [fail]: your lstadd does not work with basic input
 Test code:
@@ -141,8 +141,8 @@ Test code:
 	exit(TEST_FAILED);
 
 Diffs:
-      lstadd: |0x7ff4766000d0|
-   ft_lstadd: |0x7ff4766000a0|
+      lstadd: |0x7fe003600200|
+   ft_lstadd: |0x7fe0036001d0|
 
 [crash]: your lstadd does not work with null node input
 Test code:
