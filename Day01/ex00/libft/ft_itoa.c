@@ -6,7 +6,7 @@
 /*   By: olesgedz <olesgedz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/03 01:09:09 by olesgedz          #+#    #+#             */
-/*   Updated: 2018/12/07 02:49:47 by olesgedz         ###   ########.fr       */
+/*   Updated: 2018/12/08 20:10:47 by jblack-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static void		itoa_isnegative(int *n, int *negative)
 	}
 }
 
-char	*ft_itoa(int n)
+char			*ft_itoa(int n)
 {
 	int		tmpn;
 	int		len;

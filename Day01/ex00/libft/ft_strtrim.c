@@ -6,7 +6,7 @@
 /*   By: jblack-b <jblack-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/30 17:10:45 by jblack-b          #+#    #+#             */
-/*   Updated: 2018/11/30 19:24:19 by jblack-b         ###   ########.fr       */
+/*   Updated: 2018/12/08 20:20:19 by jblack-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 
 char		*ft_strtrim(char const *s)
 {
-	char *new;
-	int len;
-	int i;
+	char	*new;
+	int		len;
+	int		i;
 
 	i = -1;
 	if (s == NULL)

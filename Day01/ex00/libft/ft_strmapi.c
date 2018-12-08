@@ -6,7 +6,7 @@
 /*   By: jblack-b <jblack-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/29 19:30:23 by jblack-b          #+#    #+#             */
-/*   Updated: 2018/12/07 02:38:44 by olesgedz         ###   ########.fr       */
+/*   Updated: 2018/12/08 20:19:19 by jblack-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static char		ft_u_striteri(char *s, char (*f)(unsigned int, char))
 	return (*s);
 }
 
-char		*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+char			*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	char *new;
 

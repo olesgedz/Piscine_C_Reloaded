@@ -6,14 +6,14 @@
 /*   By: jblack-b <jblack-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/04 17:40:33 by jblack-b          #+#    #+#             */
-/*   Updated: 2018/12/08 18:09:00 by jblack-b         ###   ########.fr       */
+/*   Updated: 2018/12/08 20:17:19 by jblack-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include "includes/libft.h"
 
-static	size_t		ft_toutf8(char *dest, unsigned int ch)
+static	size_t			ft_toutf8(char *dest, unsigned int ch)
 {
 	if (ch < 0x800)
 	{
@@ -39,10 +39,10 @@ static	size_t		ft_toutf8(char *dest, unsigned int ch)
 	return (0);
 }
 
-void		ft_putchar_fd(char c, int fd)
+void					ft_putchar_fd(char c, int fd)
 {
-	char strm[4];
-	int length;
+	char	strm[4];
+	int		length;
 
 	if ((unsigned char)c < 0x80)
 		write(fd, &c, 1);

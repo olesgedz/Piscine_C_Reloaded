@@ -6,7 +6,7 @@
 /*   By: jblack-b <jblack-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/22 19:40:06 by jblack-b          #+#    #+#             */
-/*   Updated: 2018/11/29 18:26:39 by jblack-b         ###   ########.fr       */
+/*   Updated: 2018/12/08 20:13:02 by jblack-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void		*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
-	size_t i;
-	int flag;
+	size_t	i;
+	int		flag;
 
 	flag = 0;
 	i = 0;

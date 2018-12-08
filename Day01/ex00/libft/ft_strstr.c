@@ -6,7 +6,7 @@
 /*   By: jblack-b <jblack-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/26 18:57:25 by jblack-b          #+#    #+#             */
-/*   Updated: 2018/12/08 19:49:33 by jblack-b         ###   ########.fr       */
+/*   Updated: 2018/12/08 20:19:50 by jblack-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static int		ft_strstrcmp(char *s1, char *s2)
 	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }
 
-char		*ft_strstr(const char *haystack, const char *needle)
+char			*ft_strstr(const char *haystack, const char *needle)
 {
 	if (*needle == '\0')
 		return ((char *)haystack);

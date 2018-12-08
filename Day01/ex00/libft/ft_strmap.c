@@ -6,7 +6,7 @@
 /*   By: jblack-b <jblack-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/29 18:30:25 by jblack-b          #+#    #+#             */
-/*   Updated: 2018/12/07 02:41:39 by olesgedz         ###   ########.fr       */
+/*   Updated: 2018/12/08 20:19:32 by jblack-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static char		ft_u_striter(char *s, char (*f)(char))
 	return (*s);
 }
 
-char		*ft_strmap(char const *s, char (*f)(char))
+char			*ft_strmap(char const *s, char (*f)(char))
 {
 	char *new;
 

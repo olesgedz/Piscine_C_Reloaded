@@ -6,7 +6,7 @@
 /*   By: jblack-b <jblack-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/05 18:33:53 by jblack-b          #+#    #+#             */
-/*   Updated: 2018/12/07 02:28:22 by olesgedz         ###   ########.fr       */
+/*   Updated: 2018/12/08 20:12:25 by jblack-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 
 	if (!lst || !f)
 		return (NULL);
-
 	tmp = f(lst);
 	if (!(new = ft_lstnew(tmp->content, tmp->content_size)))
 		return (NULL);

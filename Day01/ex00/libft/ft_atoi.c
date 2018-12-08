@@ -6,7 +6,7 @@
 /*   By: jblack-b <jblack-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/27 15:37:56 by jblack-b          #+#    #+#             */
-/*   Updated: 2018/12/07 02:39:54 by olesgedz         ###   ########.fr       */
+/*   Updated: 2018/12/08 20:08:47 by jblack-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,11 @@ static void		ft_atoi_skip(const char **str, int *sign)
 		(*str)++;
 }
 
-int		ft_atoi(const char *str)
+int				ft_atoi(const char *str)
 {
-	unsigned long long nbr;
-	int sign;
-	int digits;
+	unsigned long long	nbr;
+	int					sign;
+	int					digits;
 
 	sign = 1;
 	nbr = 0;
