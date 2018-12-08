@@ -6,7 +6,7 @@
 /*   By: jblack-b <jblack-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/05 18:33:53 by jblack-b          #+#    #+#             */
-/*   Updated: 2018/12/08 20:12:25 by jblack-b         ###   ########.fr       */
+/*   Updated: 2018/12/08 20:33:32 by jblack-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,10 @@ t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 	{
 		tmp = f(lst);
 		if (!(new->next = ft_lstnew(tmp->content, tmp->content_size)))
+		{
+			ft_lstdel(&begin);
 			return (NULL);
+		}
 		new = new->next;
 		lst = lst->next;
 	}
