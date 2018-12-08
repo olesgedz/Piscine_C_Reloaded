@@ -6,14 +6,29 @@
 /*   By: jblack-b <jblack-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/05 18:33:53 by jblack-b          #+#    #+#             */
-/*   Updated: 2018/12/08 20:33:32 by jblack-b         ###   ########.fr       */
+/*   Updated: 2018/12/08 21:12:14 by jblack-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/libft.h"
 #include <stdlib.h>
 
-t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
+static void		ft_lstmap_clean(t_list **begin)
+{
+	t_list *next_tmp;
+
+	while ((*begin)->next != NULL)
+	{
+		next_tmp = (*begin)->next;
+		free((*begin)->content);
+		free((*begin)->next);
+		*begin = next_tmp;
+	}
+	(*begin) = NULL;
+	free((*begin));
+}
+
+t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
 	t_list	*new;
 	t_list	*tmp;
@@ -31,7 +46,7 @@ t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 		tmp = f(lst);
 		if (!(new->next = ft_lstnew(tmp->content, tmp->content_size)))
 		{
-			ft_lstdel(&begin);
+			ft_lstmap_clean(&begin);
 			return (NULL);
 		}
 		new = new->next;
