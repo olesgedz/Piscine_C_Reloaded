@@ -6,17 +6,17 @@
 /*   By: jblack-b <jblack-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/28 16:23:23 by jblack-b          #+#    #+#             */
-/*   Updated: 2018/11/29 16:47:41 by jblack-b         ###   ########.fr       */
+/*   Updated: 2018/12/08 18:08:31 by jblack-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include "libft.h"
+#include "includes/libft.h"
 
-void		*ft_memalloc(size_t size)
+void				*ft_memalloc(size_t size)
 {
-	void *new;
-	size_t i;
+	void			*new;
+	size_t		i;
 
 	i = 0;
 	new = NULL;

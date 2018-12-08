@@ -34,7 +34,6 @@ $(NAME): includes/libft.h
 	$(CC) $(CFLAGS) -c $(SRC) $(HDDIRS)
 	ar rc $(NAME) $(OBJ)
 	ranlib $(NAME)
-
 all: $(NAME)
 
 clean:

@@ -6,14 +6,14 @@
 /*   By: jblack-b <jblack-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/29 18:30:25 by jblack-b          #+#    #+#             */
-/*   Updated: 2018/11/29 19:09:12 by jblack-b         ###   ########.fr       */
+/*   Updated: 2018/12/07 02:41:39 by olesgedz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include "libft.h"
+#include "includes/libft.h"
 
-char		ft_u_striter(char *s, char (*f)(char))
+static char		ft_u_striter(char *s, char (*f)(char))
 {
 	if (s)
 		while (*s)

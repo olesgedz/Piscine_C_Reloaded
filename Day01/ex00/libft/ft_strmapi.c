@@ -6,14 +6,14 @@
 /*   By: jblack-b <jblack-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/29 19:30:23 by jblack-b          #+#    #+#             */
-/*   Updated: 2018/11/29 19:36:30 by jblack-b         ###   ########.fr       */
+/*   Updated: 2018/12/07 02:38:44 by olesgedz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include "libft.h"
+#include "includes/libft.h"
 
-char		ft_u_striteri(char *s, char (*f)(unsigned int, char))
+static char		ft_u_striteri(char *s, char (*f)(unsigned int, char))
 {
 	int i;
 

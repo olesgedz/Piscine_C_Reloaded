@@ -6,14 +6,14 @@
 /*   By: olesgedz <olesgedz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/03 01:09:09 by olesgedz          #+#    #+#             */
-/*   Updated: 2018/12/03 01:19:38 by olesgedz         ###   ########.fr       */
+/*   Updated: 2018/12/07 02:49:47 by olesgedz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "includes/libft.h"
 #include <stdlib.h>
 
-void	itoa_isnegative(int *n, int *negative)
+static void		itoa_isnegative(int *n, int *negative)
 {
 	if (*n < 0)
 	{

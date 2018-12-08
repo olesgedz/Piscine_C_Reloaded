@@ -6,16 +6,16 @@
 /*   By: jblack-b <jblack-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/26 18:57:25 by jblack-b          #+#    #+#             */
-/*   Updated: 2018/11/29 16:53:24 by jblack-b         ###   ########.fr       */
+/*   Updated: 2018/12/08 19:49:33 by jblack-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
-#include "libft.h"
+#include "includes/libft.h"
 
 static int		ft_strstrcmp(char *s1, char *s2)
 {
-	int i;
+	size_t i;
 
 	i = 0;
 	while ((unsigned char)s1[i] == (unsigned char)s2[i]
