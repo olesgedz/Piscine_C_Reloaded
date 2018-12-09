@@ -6,7 +6,7 @@
 /*   By: jblack-b <jblack-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/05 18:33:53 by jblack-b          #+#    #+#             */
-/*   Updated: 2018/12/08 21:12:14 by jblack-b         ###   ########.fr       */
+/*   Updated: 2018/12/09 19:52:41 by jblack-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,13 @@ static void		ft_lstmap_clean(t_list **begin)
 {
 	t_list *next_tmp;
 
-	while ((*begin)->next != NULL)
+	while ((*begin) != NULL)
 	{
 		next_tmp = (*begin)->next;
-		free((*begin)->content);
-		free((*begin)->next);
+		free(&((*begin)->content));
+		(*begin)->content = NULL;
+		free(&((*begin)->next));
+		(*begin)->next = NULL;
 		*begin = next_tmp;
 	}
 	(*begin) = NULL;
@@ -52,5 +54,6 @@ t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 		new = new->next;
 		lst = lst->next;
 	}
+	//ft_lstmap_clean(&begin);
 	return (begin);
 }
