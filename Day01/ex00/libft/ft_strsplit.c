@@ -6,12 +6,13 @@
 /*   By: jblack-b <jblack-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/30 19:25:35 by jblack-b          #+#    #+#             */
-/*   Updated: 2018/12/08 19:44:28 by jblack-b         ###   ########.fr       */
+/*   Updated: 2018/12/09 19:22:19 by jblack-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/libft.h"
 #include <stdlib.h>
+#include <stdio.h>
 
 static int		ft_n_words(const char *s, char c)
 {
@@ -49,12 +50,19 @@ static int		ft_wlen(const char *s, char c)
 
 static int		ft_strsplit_cleanup(char ***dst)
 {
-	while (*dst)
+	int i;
+
+	i = 0;
+	while (dst[i])
 	{
-		free(**dst);
-		(*dst)++;
+		free((*dst)[i]);
+		(*dst)[i] = NULL;
+		i++;
 	}
+	free((*dst)[i]);
+	(*dst)[i] = NULL;
 	free(*dst);
+	*dst = NULL;
 	return (1);
 }
 
