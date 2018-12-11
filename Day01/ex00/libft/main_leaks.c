@@ -6,7 +6,7 @@
 /*   By: jblack-b <jblack-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/09 17:09:42 by jblack-b          #+#    #+#             */
-/*   Updated: 2018/12/11 16:01:50 by jblack-b         ###   ########.fr       */
+/*   Updated: 2018/12/11 17:44:30 by jblack-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -139,6 +139,12 @@ ft_lstmap_clean(&new);
 		printf("%s", *t);
 		t++;
 	}*/
-	ft_strsplit_cleanup(&t);
+	int nbrs[] = {1,2,3,324,-123,-1000};
+	ft_arrayprint(nbrs, 6);
+	ft_arraysort(nbrs, 6);
+	//ft_swap_int(&nbrs[0], &nbrs[1]);
+	ft_putstr("\n");
+	ft_arrayprint(nbrs, 6);
+ft_putstr("das");
 	return (0);
 }

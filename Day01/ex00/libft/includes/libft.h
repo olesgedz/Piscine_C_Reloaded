@@ -6,7 +6,7 @@
 /*   By: jblack-b <jblack-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/23 17:41:19 by jblack-b          #+#    #+#             */
-/*   Updated: 2018/12/11 16:05:50 by jblack-b         ###   ########.fr       */
+/*   Updated: 2018/12/11 17:21:59 by jblack-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,5 +81,10 @@ void				ft_lstadd(t_list **alst, t_list *new);
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 void				ft_lstprint(t_list *list);
+int					ft_arraymax(int *array, size_t length);
+int					ft_arraymin(int *array, size_t length);
+void				ft_swap_int(int *a, int *b);
+void				ft_arrayprint(int *array, size_t length);
+void				ft_arraysort(int *array, size_t length);
 
 #endif
